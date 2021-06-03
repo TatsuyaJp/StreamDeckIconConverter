@@ -1,4 +1,4 @@
-# StreamDeckIconConverter
+# Stream Deck Icon Converter
 
 (日本語版は後半に記載しています。)
 
