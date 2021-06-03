@@ -1,0 +1,1389 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<root>
+  <!-- 
+    Microsoft ResX Schema 
+    
+    Version 2.0
+    
+    The primary goals of this format is to allow a simple XML format 
+    that is mostly human readable. The generation and parsing of the 
+    various data types are done through the TypeConverter classes 
+    associated with the data types.
+    
+    Example:
+    
+    ... ado.net/XML headers & schema ...
+    <resheader name="resmimetype">text/microsoft-resx</resheader>
+    <resheader name="version">2.0</resheader>
+    <resheader name="reader">System.Resources.ResXResourceReader, System.Windows.Forms, ...</resheader>
+    <resheader name="writer">System.Resources.ResXResourceWriter, System.Windows.Forms, ...</resheader>
+    <data name="Name1"><value>this is my long string</value><comment>this is a comment</comment></data>
+    <data name="Color1" type="System.Drawing.Color, System.Drawing">Blue</data>
+    <data name="Bitmap1" mimetype="application/x-microsoft.net.object.binary.base64">
+        <value>[base64 mime encoded serialized .NET Framework object]</value>
+    </data>
+    <data name="Icon1" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+        <value>[base64 mime encoded string representing a byte array form of the .NET Framework object]</value>
+        <comment>This is a comment</comment>
+    </data>
+                
+    There are any number of "resheader" rows that contain simple 
+    name/value pairs.
+    
+    Each data row contains a name, and value. The row also contains a 
+    type or mimetype. Type corresponds to a .NET class that support 
+    text/value conversion through the TypeConverter architecture. 
+    Classes that don't support this are serialized and stored with the 
+    mimetype set.
+    
+    The mimetype is used for serialized objects, and tells the 
+    ResXResourceReader how to depersist the object. This is currently not 
+    extensible. For a given mimetype the value must be set accordingly:
+    
+    Note - application/x-microsoft.net.object.binary.base64 is the format 
+    that the ResXResourceWriter will generate, however the reader can 
+    read any of the formats listed below.
+    
+    mimetype: application/x-microsoft.net.object.binary.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Binary.BinaryFormatter
+            : and then encoded with base64 encoding.
+    
+    mimetype: application/x-microsoft.net.object.soap.base64
+    value   : The object must be serialized with 
+            : System.Runtime.Serialization.Formatters.Soap.SoapFormatter
+            : and then encoded with base64 encoding.
+
+    mimetype: application/x-microsoft.net.object.bytearray.base64
+    value   : The object must be serialized into a byte array 
+            : using a System.ComponentModel.TypeConverter
+            : and then encoded with base64 encoding.
+    -->
+  <xsd:schema id="root" xmlns="" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata">
+    <xsd:import namespace="http://www.w3.org/XML/1998/namespace" />
+    <xsd:element name="root" msdata:IsDataSet="true">
+      <xsd:complexType>
+        <xsd:choice maxOccurs="unbounded">
+          <xsd:element name="metadata">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" />
+              </xsd:sequence>
+              <xsd:attribute name="name" use="required" type="xsd:string" />
+              <xsd:attribute name="type" type="xsd:string" />
+              <xsd:attribute name="mimetype" type="xsd:string" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="assembly">
+            <xsd:complexType>
+              <xsd:attribute name="alias" type="xsd:string" />
+              <xsd:attribute name="name" type="xsd:string" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="data">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+                <xsd:element name="comment" type="xsd:string" minOccurs="0" msdata:Ordinal="2" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" msdata:Ordinal="1" />
+              <xsd:attribute name="type" type="xsd:string" msdata:Ordinal="3" />
+              <xsd:attribute name="mimetype" type="xsd:string" msdata:Ordinal="4" />
+              <xsd:attribute ref="xml:space" />
+            </xsd:complexType>
+          </xsd:element>
+          <xsd:element name="resheader">
+            <xsd:complexType>
+              <xsd:sequence>
+                <xsd:element name="value" type="xsd:string" minOccurs="0" msdata:Ordinal="1" />
+              </xsd:sequence>
+              <xsd:attribute name="name" type="xsd:string" use="required" />
+            </xsd:complexType>
+          </xsd:element>
+        </xsd:choice>
+      </xsd:complexType>
+    </xsd:element>
+  </xsd:schema>
+  <resheader name="resmimetype">
+    <value>text/microsoft-resx</value>
+  </resheader>
+  <resheader name="version">
+    <value>2.0</value>
+  </resheader>
+  <resheader name="reader">
+    <value>System.Resources.ResXResourceReader, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <resheader name="writer">
+    <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </resheader>
+  <data name="labelIconLayout.Text" xml:space="preserve">
+    <value>Icon Layout :</value>
+  </data>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="labelInputSize.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 12</value>
+  </data>
+  <data name="&gt;&gt;hScrollBarStartTimeMs.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="labelInputFile.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 9</value>
+  </data>
+  <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="labelOutputSize.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;numericUpDownFrameRate.ZOrder" xml:space="preserve">
+    <value>24</value>
+  </data>
+  <data name="buttonIconLayoutNormal.Location" type="System.Drawing.Point, System.Drawing">
+    <value>225, 75</value>
+  </data>
+  <data name="labelStartTimeMs.Size" type="System.Drawing.Size, System.Drawing">
+    <value>34, 12</value>
+  </data>
+  <data name="labelCropStartPos.Text" xml:space="preserve">
+    <value>Crop Start Pos :</value>
+  </data>
+  <data name="&gt;&gt;numericUpDownIconLayoutCol.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="labelGifDuration.TabIndex" type="System.Int32, mscorlib">
+    <value>45</value>
+  </data>
+  <data name="buttonIconLayoutNormal.TabIndex" type="System.Int32, mscorlib">
+    <value>17</value>
+  </data>
+  <data name="&gt;&gt;hScrollBarStartTime.ZOrder" xml:space="preserve">
+    <value>16</value>
+  </data>
+  <data name="buttonPreviewGif.Size" type="System.Drawing.Size, System.Drawing">
+    <value>295, 23</value>
+  </data>
+  <data name="&gt;&gt;labelInputFile.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;hScrollBarCropPos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.HScrollBar, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="labelStartTimeSpan.Text" xml:space="preserve">
+    <value>00:00:00</value>
+  </data>
+  <data name="labelEndTimeSpan.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="textBoxInputFilePath.Size" type="System.Drawing.Size, System.Drawing">
+    <value>401, 19</value>
+  </data>
+  <data name="hScrollBarEndTime.Size" type="System.Drawing.Size, System.Drawing">
+    <value>369, 17</value>
+  </data>
+  <data name="&gt;&gt;checkBoxAddBorder.Name" xml:space="preserve">
+    <value>checkBoxAddBorder</value>
+  </data>
+  <data name="&gt;&gt;hScrollBarEndTimeMs.ZOrder" xml:space="preserve">
+    <value>13</value>
+  </data>
+  <data name="labelGifDurationSec.Size" type="System.Drawing.Size, System.Drawing">
+    <value>25, 12</value>
+  </data>
+  <data name="buttonInputFileBrowse.TabIndex" type="System.Int32, mscorlib">
+    <value>2</value>
+  </data>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="hScrollBarEndTime.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="labelCropPosDir2.Location" type="System.Drawing.Point, System.Drawing">
+    <value>501, 136</value>
+  </data>
+  <data name="labelCropPosDir2.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelFrameRate.TabIndex" type="System.Int32, mscorlib">
+    <value>50</value>
+  </data>
+  <data name="labelEndTimeMs.Size" type="System.Drawing.Size, System.Drawing">
+    <value>34, 12</value>
+  </data>
+  <data name="&gt;&gt;labelInputFile.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="textBoxFFmpegArgument.TabIndex" type="System.Int32, mscorlib">
+    <value>61</value>
+  </data>
+  <data name="comboBoxVideoFrame.Items1" xml:space="preserve">
+    <value>Letter box / Pillar box</value>
+  </data>
+  <data name="comboBoxVideoFrame.TabIndex" type="System.Int32, mscorlib">
+    <value>21</value>
+  </data>
+  <data name="labelStartTime.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 163</value>
+  </data>
+  <data name="&gt;&gt;numericUpDownIconLayoutCol.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelOutputSizeTitle.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;buttonGenerateIcon.Name" xml:space="preserve">
+    <value>buttonGenerateIcon</value>
+  </data>
+  <data name="labelEndTime.Size" type="System.Drawing.Size, System.Drawing">
+    <value>59, 12</value>
+  </data>
+  <data name="labelInputSize.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="&gt;&gt;buttonGenerateIcon.ZOrder" xml:space="preserve">
+    <value>3</value>
+  </data>
+  <data name="labelOutputSizeTitle.TabIndex" type="System.Int32, mscorlib">
+    <value>14</value>
+  </data>
+  <data name="labelStartTimeMs.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="labelEndTime.Text" xml:space="preserve">
+    <value>End Time :</value>
+  </data>
+  <data name="labelGifDurationSec.Text" xml:space="preserve">
+    <value>0[s]</value>
+  </data>
+  <data name="&gt;&gt;buttonIconLayoutNormal.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="labelFrameRate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>71, 12</value>
+  </data>
+  <data name="&gt;&gt;labelVideoFrame.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="labelStartTime.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;comboBoxVideoFrame.ZOrder" xml:space="preserve">
+    <value>39</value>
+  </data>
+  <data name="&gt;&gt;labelFrameRate.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="labelInputDurationTitle.Text" xml:space="preserve">
+    <value>Input Duration :</value>
+  </data>
+  <data name="labelEndTimeSpan.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="labelCropStartPos.TabIndex" type="System.Int32, mscorlib">
+    <value>22</value>
+  </data>
+  <data name="&gt;&gt;labelInputSize.ZOrder" xml:space="preserve">
+    <value>29</value>
+  </data>
+  <data name="labelFFmpegArgument.Size" type="System.Drawing.Size, System.Drawing">
+    <value>111, 12</value>
+  </data>
+  <data name="hScrollBarCropPos.TabIndex" type="System.Int32, mscorlib">
+    <value>24</value>
+  </data>
+  <data name="&gt;&gt;labelStartTimeMs.ZOrder" xml:space="preserve">
+    <value>7</value>
+  </data>
+  <data name="&gt;&gt;linkLabelTwitter.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="$this.Text" xml:space="preserve">
+    <value>Stream Deck Icon Converter</value>
+  </data>
+  <data name="&gt;&gt;labelCropStartPosPixel.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="labelIconLayout.Size" type="System.Drawing.Size, System.Drawing">
+    <value>70, 12</value>
+  </data>
+  <data name="labelOutputSize.Location" type="System.Drawing.Point, System.Drawing">
+    <value>354, 53</value>
+  </data>
+  <data name="labelIconLayout.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 53</value>
+  </data>
+  <data name="&gt;&gt;buttonIconLayoutNormal.ZOrder" xml:space="preserve">
+    <value>20</value>
+  </data>
+  <data name="labelInputSizeTitle.TabIndex" type="System.Int32, mscorlib">
+    <value>5</value>
+  </data>
+  <data name="hScrollBarEndTimeMs.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="labelCropStartPosPixel.Text" xml:space="preserve">
+    <value>0[px]</value>
+  </data>
+  <data name="labelGifDurationSec.Location" type="System.Drawing.Point, System.Drawing">
+    <value>225, 245</value>
+  </data>
+  <data name="labelEndTime.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 204</value>
+  </data>
+  <data name="&gt;&gt;labelInputDurationTitle.ZOrder" xml:space="preserve">
+    <value>31</value>
+  </data>
+  <data name="&gt;&gt;hScrollBarEndTime.Name" xml:space="preserve">
+    <value>hScrollBarEndTime</value>
+  </data>
+  <data name="&gt;&gt;labelEndTimeMs.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelOutputSize.Name" xml:space="preserve">
+    <value>labelOutputSize</value>
+  </data>
+  <data name="&gt;&gt;labelEndTime.Name" xml:space="preserve">
+    <value>labelEndTime</value>
+  </data>
+  <data name="&gt;&gt;labelIconLayoutX.Name" xml:space="preserve">
+    <value>labelIconLayoutX</value>
+  </data>
+  <data name="labelCropStartPosPixel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>31, 12</value>
+  </data>
+  <data name="&gt;&gt;labelCropPosDir2.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="hScrollBarStartTime.Size" type="System.Drawing.Size, System.Drawing">
+    <value>369, 17</value>
+  </data>
+  <data name="&gt;&gt;labelGifDuration.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="buttonPreviewMp4.TabIndex" type="System.Int32, mscorlib">
+    <value>80</value>
+  </data>
+  <data name="buttonIconLayoutNormal.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="&gt;&gt;labelInputDuration.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelFFmpegArgument.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;labelEndTimeSpan.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="comboBoxVideoFrame.Size" type="System.Drawing.Size, System.Drawing">
+    <value>200, 20</value>
+  </data>
+  <data name="labelInputDuration.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelInputDuration.Location" type="System.Drawing.Point, System.Drawing">
+    <value>210, 30</value>
+  </data>
+  <data name="&gt;&gt;labelCropPosDir1.Name" xml:space="preserve">
+    <value>labelCropPosDir1</value>
+  </data>
+  <data name="buttonIconLayoutNormal.Size" type="System.Drawing.Size, System.Drawing">
+    <value>90, 23</value>
+  </data>
+  <data name="&gt;&gt;labelIconLayout.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="numericUpDownIconLayoutCol.Location" type="System.Drawing.Point, System.Drawing">
+    <value>129, 51</value>
+  </data>
+  <data name="&gt;&gt;labelInputSizeTitle.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="labelInputDurationTitle.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="&gt;&gt;checkBoxAddBorder.Type" xml:space="preserve">
+    <value>System.Windows.Forms.CheckBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="labelInputSize.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="hScrollBarStartTimeMs.Location" type="System.Drawing.Point, System.Drawing">
+    <value>129, 177</value>
+  </data>
+  <data name="hScrollBarEndTime.Location" type="System.Drawing.Point, System.Drawing">
+    <value>129, 201</value>
+  </data>
+  <data name="&gt;&gt;buttonGenerateIcon.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;hScrollBarCropPos.Name" xml:space="preserve">
+    <value>hScrollBarCropPos</value>
+  </data>
+  <data name="labelEndTime.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="&gt;&gt;labelGifDuration.ZOrder" xml:space="preserve">
+    <value>37</value>
+  </data>
+  <data name="&gt;&gt;labelCropPosDir1.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="numericUpDownIconLayoutCol.TabIndex" type="System.Int32, mscorlib">
+    <value>11</value>
+  </data>
+  <data name="labelInputFile.Text" xml:space="preserve">
+    <value>Input Video File :</value>
+  </data>
+  <data name="labelInputDuration.TabIndex" type="System.Int32, mscorlib">
+    <value>4</value>
+  </data>
+  <data name="&gt;&gt;textBoxFFmpegArgument.ZOrder" xml:space="preserve">
+    <value>43</value>
+  </data>
+  <data name="&gt;&gt;buttonIconLayoutXL.ZOrder" xml:space="preserve">
+    <value>19</value>
+  </data>
+  <data name="labelOutputSizeTitle.Text" xml:space="preserve">
+    <value>Output Size :</value>
+  </data>
+  <data name="&gt;&gt;labelFrameRate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;comboBoxVideoFrame.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;labelEndTime.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="buttonInputFileBrowse.Size" type="System.Drawing.Size, System.Drawing">
+    <value>75, 23</value>
+  </data>
+  <data name="labelOutputSize.Size" type="System.Drawing.Size, System.Drawing">
+    <value>59, 12</value>
+  </data>
+  <data name="&gt;&gt;labelStartTimeSpan.ZOrder" xml:space="preserve">
+    <value>9</value>
+  </data>
+  <data name="labelIconLayoutX.TabIndex" type="System.Int32, mscorlib">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;buttonInputFileBrowse.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Form, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonPreviewMp4.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;linkLabelGitHub.ZOrder" xml:space="preserve">
+    <value>0</value>
+  </data>
+  <data name="labelInputSize.TabIndex" type="System.Int32, mscorlib">
+    <value>6</value>
+  </data>
+  <data name="labelEndTimeMs.Location" type="System.Drawing.Point, System.Drawing">
+    <value>501, 221</value>
+  </data>
+  <data name="&gt;&gt;labelInputSize.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;buttonInputFileBrowse.ZOrder" xml:space="preserve">
+    <value>42</value>
+  </data>
+  <data name="checkBoxAddBorder.Location" type="System.Drawing.Point, System.Drawing">
+    <value>14, 354</value>
+  </data>
+  <data name="labelCropPosDir2.Size" type="System.Drawing.Size, System.Drawing">
+    <value>32, 12</value>
+  </data>
+  <data name="&gt;&gt;linkLabelTwitter.Name" xml:space="preserve">
+    <value>linkLabelTwitter</value>
+  </data>
+  <data name="&gt;&gt;labelGifDuration.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="labelFFmpegArgument.TabIndex" type="System.Int32, mscorlib">
+    <value>60</value>
+  </data>
+  <data name="labelIconLayout.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="linkLabelGitHub.TabIndex" type="System.Int32, mscorlib">
+    <value>84</value>
+  </data>
+  <data name="&gt;&gt;numericUpDownIconLayoutCol.ZOrder" xml:space="preserve">
+    <value>25</value>
+  </data>
+  <data name="&gt;&gt;buttonInputFileBrowse.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="labelEndTimeSpan.TabIndex" type="System.Int32, mscorlib">
+    <value>42</value>
+  </data>
+  <data name="&gt;&gt;labelInputDurationTitle.Name" xml:space="preserve">
+    <value>labelInputDurationTitle</value>
+  </data>
+  <data name="labelInputDurationTitle.Location" type="System.Drawing.Point, System.Drawing">
+    <value>127, 30</value>
+  </data>
+  <data name="labelCropPosDir2.Text" xml:space="preserve">
+    <value>Right</value>
+  </data>
+  <data name="&gt;&gt;linkLabelTwitter.ZOrder" xml:space="preserve">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;linkLabelGitHub.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="labelCropStartPosPixel.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="labelEndTimeSpan.Location" type="System.Drawing.Point, System.Drawing">
+    <value>501, 204</value>
+  </data>
+  <data name="&gt;&gt;labelVideoFrame.Name" xml:space="preserve">
+    <value>labelVideoFrame</value>
+  </data>
+  <data name="&gt;&gt;labelOutputSizeTitle.ZOrder" xml:space="preserve">
+    <value>27</value>
+  </data>
+  <data name="labelEndTimeMs.TabIndex" type="System.Int32, mscorlib">
+    <value>44</value>
+  </data>
+  <data name="buttonIconLayoutMini.Location" type="System.Drawing.Point, System.Drawing">
+    <value>129, 75</value>
+  </data>
+  <data name="labelStartTime.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="checkBoxAddBorder.Size" type="System.Drawing.Size, System.Drawing">
+    <value>143, 16</value>
+  </data>
+  <data name="labelCropStartPos.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="buttonPreviewGif.TabIndex" type="System.Int32, mscorlib">
+    <value>81</value>
+  </data>
+  <data name="labelFrameRateFps.Size" type="System.Drawing.Size, System.Drawing">
+    <value>125, 12</value>
+  </data>
+  <data name="labelFrameRateFps.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="&gt;&gt;labelFFmpegArgument.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;numericUpDownIconLayoutRow.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="labelStartTimeSpan.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;labelCropStartPos.ZOrder" xml:space="preserve">
+    <value>18</value>
+  </data>
+  <data name="&gt;&gt;linkLabelGitHub.Type" xml:space="preserve">
+    <value>System.Windows.Forms.LinkLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="linkLabelGitHub.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;labelGifDuration.Name" xml:space="preserve">
+    <value>labelGifDuration</value>
+  </data>
+  <data name="labelGifDuration.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="&gt;&gt;labelFrameRateFps.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelInputDuration.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;labelCropStartPosPixel.ZOrder" xml:space="preserve">
+    <value>10</value>
+  </data>
+  <data name="&gt;&gt;labelInputSize.Name" xml:space="preserve">
+    <value>labelInputSize</value>
+  </data>
+  <data name="&gt;&gt;numericUpDownFrameRate.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="labelCropPosDir1.Size" type="System.Drawing.Size, System.Drawing">
+    <value>25, 12</value>
+  </data>
+  <data name="buttonPreviewMp4.Location" type="System.Drawing.Point, System.Drawing">
+    <value>14, 380</value>
+  </data>
+  <data name="&gt;&gt;buttonPreviewGif.Name" xml:space="preserve">
+    <value>buttonPreviewGif</value>
+  </data>
+  <data name="textBoxInputFilePath.Location" type="System.Drawing.Point, System.Drawing">
+    <value>129, 6</value>
+  </data>
+  <data name="labelStartTimeSpan.Size" type="System.Drawing.Size, System.Drawing">
+    <value>45, 12</value>
+  </data>
+  <data name="&gt;&gt;buttonPreviewMp4.ZOrder" xml:space="preserve">
+    <value>5</value>
+  </data>
+  <data name="hScrollBarEndTimeMs.TabIndex" type="System.Int32, mscorlib">
+    <value>43</value>
+  </data>
+  <data name="labelEndTimeMs.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="labelFrameRate.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="&gt;&gt;buttonIconLayoutNormal.Name" xml:space="preserve">
+    <value>buttonIconLayoutNormal</value>
+  </data>
+  <data name="labelIconLayoutX.Size" type="System.Drawing.Size, System.Drawing">
+    <value>11, 12</value>
+  </data>
+  <data name="hScrollBarStartTimeMs.TabIndex" type="System.Int32, mscorlib">
+    <value>33</value>
+  </data>
+  <data name="&gt;&gt;hScrollBarEndTimeMs.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="labelOutputSize.TabIndex" type="System.Int32, mscorlib">
+    <value>15</value>
+  </data>
+  <data name="&gt;&gt;labelCropPosDir2.ZOrder" xml:space="preserve">
+    <value>11</value>
+  </data>
+  <data name="&gt;&gt;hScrollBarStartTime.Name" xml:space="preserve">
+    <value>hScrollBarStartTime</value>
+  </data>
+  <data name="&gt;&gt;labelOutputSize.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;labelCropPosDir1.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="labelInputDuration.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="&gt;&gt;textBoxInputFilePath.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="labelInputFile.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;labelStartTime.Name" xml:space="preserve">
+    <value>labelStartTime</value>
+  </data>
+  <data name="labelCropStartPos.Location" type="System.Drawing.Point, System.Drawing">
+    <value>127, 136</value>
+  </data>
+  <data name="hScrollBarStartTime.Location" type="System.Drawing.Point, System.Drawing">
+    <value>129, 160</value>
+  </data>
+  <data name="buttonIconLayoutXL.TabIndex" type="System.Int32, mscorlib">
+    <value>18</value>
+  </data>
+  <data name="&gt;&gt;buttonPreviewGif.ZOrder" xml:space="preserve">
+    <value>4</value>
+  </data>
+  <data name="hScrollBarCropPos.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="&gt;&gt;numericUpDownFrameRate.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="linkLabelGitHub.Size" type="System.Drawing.Size, System.Drawing">
+    <value>40, 12</value>
+  </data>
+  <data name="&gt;&gt;buttonIconLayoutMini.Name" xml:space="preserve">
+    <value>buttonIconLayoutMini</value>
+  </data>
+  <data name="&gt;&gt;labelStartTimeSpan.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;hScrollBarEndTimeMs.Name" xml:space="preserve">
+    <value>hScrollBarEndTimeMs</value>
+  </data>
+  <data name="labelCropPosDir1.Location" type="System.Drawing.Point, System.Drawing">
+    <value>220, 136</value>
+  </data>
+  <data name="&gt;&gt;labelInputSizeTitle.Name" xml:space="preserve">
+    <value>labelInputSizeTitle</value>
+  </data>
+  <data name="buttonPreviewMp4.Text" xml:space="preserve">
+    <value>Preview (MP4)</value>
+  </data>
+  <data name="&gt;&gt;labelOutputSize.ZOrder" xml:space="preserve">
+    <value>28</value>
+  </data>
+  <data name="hScrollBarEndTime.TabIndex" type="System.Int32, mscorlib">
+    <value>41</value>
+  </data>
+  <data name="&gt;&gt;hScrollBarStartTimeMs.ZOrder" xml:space="preserve">
+    <value>14</value>
+  </data>
+  <data name="labelEndTimeMs.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelInputDuration.Size" type="System.Drawing.Size, System.Drawing">
+    <value>45, 12</value>
+  </data>
+  <data name="&gt;&gt;buttonIconLayoutMini.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBoxFFmpegArgument.Type" xml:space="preserve">
+    <value>System.Windows.Forms.TextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;numericUpDownIconLayoutCol.Name" xml:space="preserve">
+    <value>numericUpDownIconLayoutCol</value>
+  </data>
+  <data name="buttonIconLayoutXL.Location" type="System.Drawing.Point, System.Drawing">
+    <value>321, 75</value>
+  </data>
+  <data name="&gt;&gt;labelStartTimeMs.Name" xml:space="preserve">
+    <value>labelStartTimeMs</value>
+  </data>
+  <data name="buttonInputFileBrowse.Location" type="System.Drawing.Point, System.Drawing">
+    <value>536, 4</value>
+  </data>
+  <data name="labelCropPosDir2.TabIndex" type="System.Int32, mscorlib">
+    <value>25</value>
+  </data>
+  <data name="numericUpDownIconLayoutCol.Size" type="System.Drawing.Size, System.Drawing">
+    <value>60, 19</value>
+  </data>
+  <data name="&gt;&gt;buttonInputFileBrowse.Name" xml:space="preserve">
+    <value>buttonInputFileBrowse</value>
+  </data>
+  <data name="buttonGenerateIcon.Location" type="System.Drawing.Point, System.Drawing">
+    <value>14, 409</value>
+  </data>
+  <data name="labelCropStartPos.Size" type="System.Drawing.Size, System.Drawing">
+    <value>87, 12</value>
+  </data>
+  <data name="labelStartTimeSpan.Location" type="System.Drawing.Point, System.Drawing">
+    <value>501, 163</value>
+  </data>
+  <data name="hScrollBarEndTimeMs.Size" type="System.Drawing.Size, System.Drawing">
+    <value>369, 17</value>
+  </data>
+  <data name="linkLabelTwitter.Size" type="System.Drawing.Size, System.Drawing">
+    <value>111, 12</value>
+  </data>
+  <data name="hScrollBarStartTime.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="buttonIconLayoutMini.Text" xml:space="preserve">
+    <value>Mini (3x2)</value>
+  </data>
+  <data name="buttonPreviewMp4.Size" type="System.Drawing.Size, System.Drawing">
+    <value>295, 23</value>
+  </data>
+  <data name="labelInputSizeTitle.Text" xml:space="preserve">
+    <value>Input Size :</value>
+  </data>
+  <data name="labelInputSizeTitle.Location" type="System.Drawing.Point, System.Drawing">
+    <value>278, 30</value>
+  </data>
+  <data name="&gt;&gt;labelCropStartPos.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="labelFrameRate.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="buttonPreviewGif.Text" xml:space="preserve">
+    <value>Preview (GIF)</value>
+  </data>
+  <data name="labelEndTimeSpan.Text" xml:space="preserve">
+    <value>00:00:00</value>
+  </data>
+  <data name="&gt;&gt;labelEndTimeMs.ZOrder" xml:space="preserve">
+    <value>6</value>
+  </data>
+  <data name="labelInputFile.TabIndex" type="System.Int32, mscorlib">
+    <value>0</value>
+  </data>
+  <data name="comboBoxVideoFrame.Items" xml:space="preserve">
+    <value>Crop</value>
+  </data>
+  <data name="&gt;&gt;labelCropPosDir1.ZOrder" xml:space="preserve">
+    <value>12</value>
+  </data>
+  <data name="&gt;&gt;labelCropStartPosPixel.Name" xml:space="preserve">
+    <value>labelCropStartPosPixel</value>
+  </data>
+  <data name="labelCropPosDir1.TabIndex" type="System.Int32, mscorlib">
+    <value>23</value>
+  </data>
+  <data name="numericUpDownIconLayoutRow.TabIndex" type="System.Int32, mscorlib">
+    <value>13</value>
+  </data>
+  <data name="&gt;&gt;labelEndTimeSpan.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="buttonGenerateIcon.Size" type="System.Drawing.Size, System.Drawing">
+    <value>598, 23</value>
+  </data>
+  <data name="labelFrameRate.Text" xml:space="preserve">
+    <value>Frame Rate :</value>
+  </data>
+  <data name="&gt;&gt;buttonPreviewMp4.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="checkBoxAddBorder.TabIndex" type="System.Int32, mscorlib">
+    <value>70</value>
+  </data>
+  <data name="buttonGenerateIcon.Text" xml:space="preserve">
+    <value>Generate Icon (GIF)</value>
+  </data>
+  <data name="hScrollBarCropPos.Location" type="System.Drawing.Point, System.Drawing">
+    <value>248, 133</value>
+  </data>
+  <data name="&gt;&gt;labelStartTime.ZOrder" xml:space="preserve">
+    <value>40</value>
+  </data>
+  <data name="&gt;&gt;labelStartTime.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;checkBoxAddBorder.ZOrder" xml:space="preserve">
+    <value>2</value>
+  </data>
+  <data name="labelFrameRateFps.Text" xml:space="preserve">
+    <value>[fps] (Recommend : 10)</value>
+  </data>
+  <data name="&gt;&gt;hScrollBarEndTime.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;labelInputDurationTitle.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;labelEndTimeSpan.Name" xml:space="preserve">
+    <value>labelEndTimeSpan</value>
+  </data>
+  <data name="labelGifDurationSec.TabIndex" type="System.Int32, mscorlib">
+    <value>46</value>
+  </data>
+  <data name="&gt;&gt;hScrollBarCropPos.ZOrder" xml:space="preserve">
+    <value>17</value>
+  </data>
+  <data name="&gt;&gt;hScrollBarStartTime.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;textBoxInputFilePath.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;labelOutputSize.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;linkLabelGitHub.Name" xml:space="preserve">
+    <value>linkLabelGitHub</value>
+  </data>
+  <data name="&gt;&gt;labelInputDuration.ZOrder" xml:space="preserve">
+    <value>30</value>
+  </data>
+  <data name="&gt;&gt;textBoxInputFilePath.Name" xml:space="preserve">
+    <value>textBoxInputFilePath</value>
+  </data>
+  <data name="hScrollBarStartTimeMs.Size" type="System.Drawing.Size, System.Drawing">
+    <value>369, 17</value>
+  </data>
+  <data name="hScrollBarEndTimeMs.Location" type="System.Drawing.Point, System.Drawing">
+    <value>129, 218</value>
+  </data>
+  <data name="labelStartTimeMs.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelOutputSize.Text" xml:space="preserve">
+    <value>0000x0000</value>
+  </data>
+  <data name="&gt;&gt;buttonIconLayoutXL.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="labelGifDuration.Size" type="System.Drawing.Size, System.Drawing">
+    <value>92, 12</value>
+  </data>
+  <data name="numericUpDownFrameRate.Size" type="System.Drawing.Size, System.Drawing">
+    <value>60, 19</value>
+  </data>
+  <data name="&gt;&gt;hScrollBarStartTimeMs.Type" xml:space="preserve">
+    <value>System.Windows.Forms.HScrollBar, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="labelStartTimeMs.Location" type="System.Drawing.Point, System.Drawing">
+    <value>501, 180</value>
+  </data>
+  <data name="labelFFmpegArgument.Text" xml:space="preserve">
+    <value>FFmpeg Arguments :</value>
+  </data>
+  <data name="&gt;&gt;labelFrameRateFps.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="buttonGenerateIcon.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="&gt;&gt;labelStartTimeSpan.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;labelEndTimeMs.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="buttonIconLayoutXL.Text" xml:space="preserve">
+    <value>XL (8x4)</value>
+  </data>
+  <data name="&gt;&gt;buttonIconLayoutMini.ZOrder" xml:space="preserve">
+    <value>21</value>
+  </data>
+  <data name="&gt;&gt;labelEndTimeMs.Name" xml:space="preserve">
+    <value>labelEndTimeMs</value>
+  </data>
+  <data name="labelStartTime.TabIndex" type="System.Int32, mscorlib">
+    <value>30</value>
+  </data>
+  <data name="labelStartTimeSpan.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="numericUpDownIconLayoutRow.Size" type="System.Drawing.Size, System.Drawing">
+    <value>60, 19</value>
+  </data>
+  <data name="&gt;&gt;labelCropStartPosPixel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="buttonIconLayoutMini.Size" type="System.Drawing.Size, System.Drawing">
+    <value>90, 23</value>
+  </data>
+  <data name="labelVideoFrame.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelIconLayoutX.Location" type="System.Drawing.Point, System.Drawing">
+    <value>195, 53</value>
+  </data>
+  <data name="&gt;&gt;labelGifDurationSec.ZOrder" xml:space="preserve">
+    <value>33</value>
+  </data>
+  <data name="&gt;&gt;$this.Name" xml:space="preserve">
+    <value>MainForm</value>
+  </data>
+  <data name="&gt;&gt;labelCropPosDir2.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;buttonPreviewMp4.Name" xml:space="preserve">
+    <value>buttonPreviewMp4</value>
+  </data>
+  <data name="buttonInputFileBrowse.Text" xml:space="preserve">
+    <value>Browse</value>
+  </data>
+  <data name="labelFFmpegArgument.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 303</value>
+  </data>
+  <data name="&gt;&gt;labelGifDurationSec.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelStartTime.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;buttonIconLayoutXL.Name" xml:space="preserve">
+    <value>buttonIconLayoutXL</value>
+  </data>
+  <data name="&gt;&gt;labelIconLayoutX.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;labelIconLayout.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;textBoxInputFilePath.ZOrder" xml:space="preserve">
+    <value>44</value>
+  </data>
+  <data name="hScrollBarStartTimeMs.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="labelInputDurationTitle.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelFFmpegArgument.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;buttonPreviewGif.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="buttonPreviewGif.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="labelEndTime.TabIndex" type="System.Int32, mscorlib">
+    <value>40</value>
+  </data>
+  <data name="textBoxFFmpegArgument.Location" type="System.Drawing.Point, System.Drawing">
+    <value>129, 300</value>
+  </data>
+  <data name="&gt;&gt;numericUpDownIconLayoutRow.Name" xml:space="preserve">
+    <value>numericUpDownIconLayoutRow</value>
+  </data>
+  <data name="&gt;&gt;hScrollBarStartTimeMs.Name" xml:space="preserve">
+    <value>hScrollBarStartTimeMs</value>
+  </data>
+  <data name="&gt;&gt;labelGifDurationSec.Name" xml:space="preserve">
+    <value>labelGifDurationSec</value>
+  </data>
+  <data name="numericUpDownFrameRate.TabIndex" type="System.Int32, mscorlib">
+    <value>51</value>
+  </data>
+  <data name="&gt;&gt;checkBoxAddBorder.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;labelStartTimeMs.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="checkBoxAddBorder.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelCropPosDir1.Text" xml:space="preserve">
+    <value>Left</value>
+  </data>
+  <data name="&gt;&gt;labelOutputSizeTitle.Name" xml:space="preserve">
+    <value>labelOutputSizeTitle</value>
+  </data>
+  <data name="textBoxInputFilePath.TabIndex" type="System.Int32, mscorlib">
+    <value>1</value>
+  </data>
+  <data name="&gt;&gt;labelFrameRateFps.ZOrder" xml:space="preserve">
+    <value>34</value>
+  </data>
+  <data name="&gt;&gt;labelEndTimeSpan.ZOrder" xml:space="preserve">
+    <value>8</value>
+  </data>
+  <data name="&gt;&gt;labelInputDurationTitle.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="labelCropStartPosPixel.Location" type="System.Drawing.Point, System.Drawing">
+    <value>549, 136</value>
+  </data>
+  <data name="&gt;&gt;labelGifDurationSec.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="labelFrameRate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 273</value>
+  </data>
+  <data name="labelCropPosDir1.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelGifDurationSec.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="labelOutputSizeTitle.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="&gt;&gt;labelIconLayoutX.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="labelInputDurationTitle.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <data name="labelVideoFrame.TabIndex" type="System.Int32, mscorlib">
+    <value>20</value>
+  </data>
+  <data name="&gt;&gt;labelCropPosDir2.Name" xml:space="preserve">
+    <value>labelCropPosDir2</value>
+  </data>
+  <data name="checkBoxAddBorder.Text" xml:space="preserve">
+    <value>Add borders to preview</value>
+  </data>
+  <data name="labelInputSize.Text" xml:space="preserve">
+    <value>0x0</value>
+  </data>
+  <data name="&gt;&gt;numericUpDownIconLayoutRow.Type" xml:space="preserve">
+    <value>System.Windows.Forms.NumericUpDown, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;hScrollBarEndTimeMs.Type" xml:space="preserve">
+    <value>System.Windows.Forms.HScrollBar, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelInputFile.ZOrder" xml:space="preserve">
+    <value>45</value>
+  </data>
+  <data name="&gt;&gt;comboBoxVideoFrame.Name" xml:space="preserve">
+    <value>comboBoxVideoFrame</value>
+  </data>
+  <data name="labelGifDuration.Location" type="System.Drawing.Point, System.Drawing">
+    <value>127, 245</value>
+  </data>
+  <data name="&gt;&gt;textBoxFFmpegArgument.Name" xml:space="preserve">
+    <value>textBoxFFmpegArgument</value>
+  </data>
+  <data name="labelIconLayoutX.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelGifDurationSec.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelStartTimeMs.TabIndex" type="System.Int32, mscorlib">
+    <value>34</value>
+  </data>
+  <data name="linkLabelTwitter.Location" type="System.Drawing.Point, System.Drawing">
+    <value>500, 355</value>
+  </data>
+  <data name="&gt;&gt;comboBoxVideoFrame.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="labelInputFile.Size" type="System.Drawing.Size, System.Drawing">
+    <value>92, 12</value>
+  </data>
+  <data name="labelFFmpegArgument.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="linkLabelGitHub.Text" xml:space="preserve">
+    <value>GitHub</value>
+  </data>
+  <data name="&gt;&gt;labelIconLayoutX.ZOrder" xml:space="preserve">
+    <value>22</value>
+  </data>
+  <data name="$this.AutoScaleDimensions" type="System.Drawing.SizeF, System.Drawing">
+    <value>6, 12</value>
+  </data>
+  <data name="labelGifDuration.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;labelInputSizeTitle.ZOrder" xml:space="preserve">
+    <value>32</value>
+  </data>
+  <data name="buttonIconLayoutNormal.Text" xml:space="preserve">
+    <value>Normal (5x3)</value>
+  </data>
+  <data name="&gt;&gt;buttonPreviewGif.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="buttonIconLayoutMini.TabIndex" type="System.Int32, mscorlib">
+    <value>16</value>
+  </data>
+  <data name="&gt;&gt;textBoxFFmpegArgument.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="labelVideoFrame.Location" type="System.Drawing.Point, System.Drawing">
+    <value>12, 110</value>
+  </data>
+  <data name="textBoxFFmpegArgument.ScrollBars" type="System.Windows.Forms.ScrollBars, System.Windows.Forms">
+    <value>Vertical</value>
+  </data>
+  <data name="textBoxFFmpegArgument.Size" type="System.Drawing.Size, System.Drawing">
+    <value>483, 44</value>
+  </data>
+  <data name="labelFrameRateFps.Location" type="System.Drawing.Point, System.Drawing">
+    <value>195, 273</value>
+  </data>
+  <data name="&gt;&gt;labelFFmpegArgument.ZOrder" xml:space="preserve">
+    <value>35</value>
+  </data>
+  <data name="numericUpDownIconLayoutRow.Location" type="System.Drawing.Point, System.Drawing">
+    <value>212, 51</value>
+  </data>
+  <data name="buttonPreviewGif.Location" type="System.Drawing.Point, System.Drawing">
+    <value>316, 380</value>
+  </data>
+  <data name="&gt;&gt;labelStartTimeMs.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="linkLabelTwitter.Text" xml:space="preserve">
+    <value>Twitter(@TatsuyaJp)</value>
+  </data>
+  <data name="labelCropPosDir2.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="labelStartTime.Text" xml:space="preserve">
+    <value>Start Time :</value>
+  </data>
+  <data name="labelCropStartPosPixel.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;hScrollBarStartTime.Type" xml:space="preserve">
+    <value>System.Windows.Forms.HScrollBar, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelInputSizeTitle.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;labelStartTimeSpan.Name" xml:space="preserve">
+    <value>labelStartTimeSpan</value>
+  </data>
+  <data name="labelOutputSizeTitle.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="comboBoxVideoFrame.Location" type="System.Drawing.Point, System.Drawing">
+    <value>129, 107</value>
+  </data>
+  <data name="&gt;&gt;labelOutputSizeTitle.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="$this.ClientSize" type="System.Drawing.Size, System.Drawing">
+    <value>623, 442</value>
+  </data>
+  <data name="&gt;&gt;labelCropStartPos.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelFrameRate.Name" xml:space="preserve">
+    <value>labelFrameRate</value>
+  </data>
+  <data name="buttonIconLayoutXL.Size" type="System.Drawing.Size, System.Drawing">
+    <value>90, 23</value>
+  </data>
+  <data name="labelInputDuration.Text" xml:space="preserve">
+    <value>00:00:00</value>
+  </data>
+  <data name="&gt;&gt;labelCropStartPos.Name" xml:space="preserve">
+    <value>labelCropStartPos</value>
+  </data>
+  <data name="hScrollBarCropPos.Size" type="System.Drawing.Size, System.Drawing">
+    <value>250, 17</value>
+  </data>
+  <data name="labelEndTime.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelEndTimeSpan.Size" type="System.Drawing.Size, System.Drawing">
+    <value>45, 12</value>
+  </data>
+  <data name="&gt;&gt;numericUpDownIconLayoutRow.ZOrder" xml:space="preserve">
+    <value>23</value>
+  </data>
+  <data name="&gt;&gt;labelFrameRateFps.Name" xml:space="preserve">
+    <value>labelFrameRateFps</value>
+  </data>
+  <data name="labelInputSizeTitle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>61, 12</value>
+  </data>
+  <data name="textBoxFFmpegArgument.Multiline" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="numericUpDownFrameRate.Location" type="System.Drawing.Point, System.Drawing">
+    <value>129, 271</value>
+  </data>
+  <data name="&gt;&gt;buttonGenerateIcon.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelVideoFrame.ZOrder" xml:space="preserve">
+    <value>41</value>
+  </data>
+  <data name="&gt;&gt;buttonIconLayoutMini.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;labelIconLayout.Name" xml:space="preserve">
+    <value>labelIconLayout</value>
+  </data>
+  <data name="&gt;&gt;linkLabelTwitter.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;labelEndTime.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;hScrollBarCropPos.Parent" xml:space="preserve">
+    <value>$this</value>
+  </data>
+  <data name="&gt;&gt;labelFrameRate.ZOrder" xml:space="preserve">
+    <value>36</value>
+  </data>
+  <data name="labelStartTimeMs.Text" xml:space="preserve">
+    <value>0[ms]</value>
+  </data>
+  <data name="linkLabelTwitter.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="&gt;&gt;labelEndTime.ZOrder" xml:space="preserve">
+    <value>38</value>
+  </data>
+  <data name="labelOutputSizeTitle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>70, 12</value>
+  </data>
+  <data name="linkLabelGitHub.Location" type="System.Drawing.Point, System.Drawing">
+    <value>454, 355</value>
+  </data>
+  <data name="&gt;&gt;labelVideoFrame.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;hScrollBarEndTime.Type" xml:space="preserve">
+    <value>System.Windows.Forms.HScrollBar, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelFFmpegArgument.Name" xml:space="preserve">
+    <value>labelFFmpegArgument</value>
+  </data>
+  <data name="&gt;&gt;numericUpDownFrameRate.Name" xml:space="preserve">
+    <value>numericUpDownFrameRate</value>
+  </data>
+  <data name="labelInputSizeTitle.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelVideoFrame.Size" type="System.Drawing.Size, System.Drawing">
+    <value>76, 12</value>
+  </data>
+  <data name="linkLabelTwitter.TabIndex" type="System.Int32, mscorlib">
+    <value>83</value>
+  </data>
+  <data name="&gt;&gt;buttonIconLayoutNormal.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="buttonGenerateIcon.TabIndex" type="System.Int32, mscorlib">
+    <value>82</value>
+  </data>
+  <data name="labelInputSize.Location" type="System.Drawing.Point, System.Drawing">
+    <value>354, 30</value>
+  </data>
+  <data name="&gt;&gt;buttonIconLayoutXL.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Button, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;labelInputFile.Name" xml:space="preserve">
+    <value>labelInputFile</value>
+  </data>
+  <data name="labelVideoFrame.Text" xml:space="preserve">
+    <value>Video Frame :</value>
+  </data>
+  <data name="labelEndTimeMs.Text" xml:space="preserve">
+    <value>0[ms]</value>
+  </data>
+  <data name="&gt;&gt;labelInputDuration.Name" xml:space="preserve">
+    <value>labelInputDuration</value>
+  </data>
+  <data name="labelIconLayout.TabIndex" type="System.Int32, mscorlib">
+    <value>10</value>
+  </data>
+  <data name="labelOutputSize.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="labelFrameRateFps.AutoSize" type="System.Boolean, mscorlib">
+    <value>True</value>
+  </data>
+  <data name="labelCropStartPosPixel.TabIndex" type="System.Int32, mscorlib">
+    <value>26</value>
+  </data>
+  <data name="labelStartTime.Size" type="System.Drawing.Size, System.Drawing">
+    <value>65, 12</value>
+  </data>
+  <data name="labelStartTimeSpan.TabIndex" type="System.Int32, mscorlib">
+    <value>32</value>
+  </data>
+  <data name="labelIconLayoutX.Text" xml:space="preserve">
+    <value>x</value>
+  </data>
+  <data name="&gt;&gt;labelIconLayout.ZOrder" xml:space="preserve">
+    <value>26</value>
+  </data>
+  <data name="buttonIconLayoutXL.ImeMode" type="System.Windows.Forms.ImeMode, System.Windows.Forms">
+    <value>NoControl</value>
+  </data>
+  <data name="labelInputDurationTitle.Size" type="System.Drawing.Size, System.Drawing">
+    <value>83, 12</value>
+  </data>
+  <data name="labelOutputSizeTitle.Location" type="System.Drawing.Point, System.Drawing">
+    <value>278, 53</value>
+  </data>
+  <data name="&gt;&gt;hScrollBarEndTime.ZOrder" xml:space="preserve">
+    <value>15</value>
+  </data>
+  <data name="labelGifDuration.Text" xml:space="preserve">
+    <value>Output Duration :</value>
+  </data>
+  <data name="&gt;&gt;labelInputSize.Type" xml:space="preserve">
+    <value>System.Windows.Forms.Label, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="hScrollBarStartTime.TabIndex" type="System.Int32, mscorlib">
+    <value>31</value>
+  </data>
+  <data name="labelFrameRateFps.TabIndex" type="System.Int32, mscorlib">
+    <value>3</value>
+  </data>
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+</root>
