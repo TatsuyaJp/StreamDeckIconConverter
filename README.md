@@ -4,7 +4,7 @@
 
 ## Summary
 
-Converts a video file into an "[Elgato Stream Deck](https://www.elgato.com/ja/stream-deck)" icon file (animated GIF).  
+A Windows application that converts video files into "[Elgato Stream Deck](https://www.elgato.com/ja/stream-deck)" icon files (animated GIFs).  
 (Generates an icon image without the border area between buttons.)
 
 "[FFmpeg](https://www.ffmpeg.org/)" is required to run this application.
@@ -21,7 +21,7 @@ Converts a video file into an "[Elgato Stream Deck](https://www.elgato.com/ja/st
 5. Place `ffmpeg.exe` in the same folder as `StreamDeckIconConverter.exe`.
 
 - Convert
-1. Launch 'StreamDeckIconConverter.exe.'
+1. Launch `StreamDeckIconConverter.exe`.
 2. Click `Browse` for the `Input Video File`.
 3. Open the video file.
 4. Change the `Icon Layout`.
@@ -57,7 +57,7 @@ TatsuyaJp ([Twitter](https://twitter.com/TatsuyaJp))
 
 ## 概要
 
-動画ファイルを "[Elgato Stream Deck](https://www.elgato.com/ja/stream-deck)" のアイコンファイル(アニメーションGIF)へ変換します。  
+動画ファイルを "[Elgato Stream Deck](https://www.elgato.com/ja/stream-deck)" のアイコンファイル(アニメーションGIF)へ変換するWindowsアプリケーションです。  
 (ボタン間の境界領域を除いたアイコン画像を生成します。)
 
 本アプリケーションの動作には "[FFmpeg](https://www.ffmpeg.org/)" が必要です。
