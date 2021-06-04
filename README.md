@@ -1,11 +1,14 @@
 # Stream Deck Icon Converter
 
-(日本語版は後半に記載しています。)
+([日本語版は後半に記載しています。](#概要))
 
 ## Summary
 
 A Windows application that converts video files into "[Elgato Stream Deck](https://www.elgato.com/ja/stream-deck)" icon files (animated GIFs).  
 (Generates an icon image without the border area between buttons.)
+
+![Screenshot](https://streamdeck.half-moon.org/screenshot_en.png)
+![Convert Sample](https://streamdeck.half-moon.org/convertsample.png)
 
 "[FFmpeg](https://www.ffmpeg.org/)" is required to run this application.
 
@@ -46,13 +49,6 @@ https://github.com/TatsuyaJp/StreamDeckIconConverter/releases/latest
 9. To synchronize the animation, select a profile other than `Profile 1`.
 10. Select `Profile 1` and check the display of the icons.
 
-- Example of "Stream Deck Mini (3x2)"
-
-| Row / Col | 1 | 2 | 3 |
-| :---: | --- | --- | --- |
-| 1 | (FileName)\_01.gif | (FileName)\_02.gif | (FileName)\_03.gif |
-| 2 | (FileName)\_04.gif | (FileName)\_05.gif | (FileName)\_06.gif |
-
 ## Author
 
 TatsuyaJp ([Twitter](https://twitter.com/TatsuyaJp))
@@ -63,6 +59,9 @@ TatsuyaJp ([Twitter](https://twitter.com/TatsuyaJp))
 
 動画ファイルを "[Elgato Stream Deck](https://www.elgato.com/ja/stream-deck)" のアイコンファイル(アニメーションGIF)へ変換するWindowsアプリケーションです。  
 (ボタン間の境界領域を除いたアイコン画像を生成します。)
+
+![スクリーンショット](https://streamdeck.half-moon.org/screenshot_ja-JP.png)
+![変換サンプル](https://streamdeck.half-moon.org/convertsample.png)
 
 本アプリケーションの動作には "[FFmpeg](https://www.ffmpeg.org/)" が必要です。
 
@@ -98,17 +97,10 @@ https://github.com/TatsuyaJp/StreamDeckIconConverter/releases/latest
 4. 置いたアイコンの中で、最も左上のアイコンをクリックします。
 5. ウィンドウの下側にクリックしたアイコンが表示されるので、`v`をクリックします。
 6. `ファイルから設定` をクリックします。
-7. 連番のGIFファイルから `(FileName)_01.gif` を選択します。
+7. 連番のGIFファイルから `(ファイル名)_01.gif` を選択します。
 8. 全てのアイコンについて、GIFファイルを設定します。
 9. アニメーションを同期させるため、`Profile 1` 以外のプロファイルを選択します。
 10. `Profile 1` を選択して、アイコンの表示を確認します。
-
-- "Stream Deck Mini (3x2)" の例
-
-| 行 / 列 | 1 | 2 | 3 |
-| :---: | --- | --- | --- |
-| 1 | (FileName)\_01.gif | (FileName)\_02.gif | (FileName)\_03.gif |
-| 2 | (FileName)\_04.gif | (FileName)\_05.gif | (FileName)\_06.gif |
 
 ## 作者
 
