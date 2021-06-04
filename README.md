@@ -9,10 +9,14 @@ A Windows application that converts video files into "[Elgato Stream Deck](https
 
 "[FFmpeg](https://www.ffmpeg.org/)" is required to run this application.
 
+## Download
+
+https://github.com/TatsuyaJp/StreamDeckIconConverter/releases/latest
+
 ## How to use
 
 - Prepare
-1. Download this application from "[Releases](https://github.com/TatsuyaJp/StreamDeckIconConverter/releases)".
+1. Download this application from "[Letest release](https://github.com/TatsuyaJp/StreamDeckIconConverter/releases/latest)".
 2. Extract the file from step 1.
 3. Download "[FFmpeg](https://www.gyan.dev/ffmpeg/builds/)".
    - If you already have "[7-Zip](https://www.7-zip.org/)" installed, download `ffmpeg-release-essentials.7z`.
@@ -62,10 +66,14 @@ TatsuyaJp ([Twitter](https://twitter.com/TatsuyaJp))
 
 本アプリケーションの動作には "[FFmpeg](https://www.ffmpeg.org/)" が必要です。
 
+## ダウンロード
+
+https://github.com/TatsuyaJp/StreamDeckIconConverter/releases/latest
+
 ## 使用方法
 
 - 準備
-1. "[Releases](https://github.com/TatsuyaJp/StreamDeckIconConverter/releases)" から本アプリケーションをダウンロードします。
+1. "[最新のリリース](https://github.com/TatsuyaJp/StreamDeckIconConverter/releases/latest)" から本アプリケーションをダウンロードします。
 2. 手順1.のファイルを展開します。
 3. "[FFmpeg](https://www.gyan.dev/ffmpeg/builds/)" をダウンロードします。
    - "[7-Zip](https://sevenzip.osdn.jp/)" がインストール済みなら `ffmpeg-release-essentials.7z` をダウンロードします。
