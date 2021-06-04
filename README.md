@@ -14,7 +14,7 @@ A Windows application that converts video files into "[Elgato Stream Deck](https
 
 ## Download
 
-https://github.com/TatsuyaJp/StreamDeckIconConverter/releases/latest
+[Letest release](https://github.com/TatsuyaJp/StreamDeckIconConverter/releases/latest)
 
 ## How to use
 
@@ -67,7 +67,7 @@ TatsuyaJp ([Twitter](https://twitter.com/TatsuyaJp))
 
 ## ダウンロード
 
-https://github.com/TatsuyaJp/StreamDeckIconConverter/releases/latest
+[最新のリリース](https://github.com/TatsuyaJp/StreamDeckIconConverter/releases/latest)
 
 ## 使用方法
 
