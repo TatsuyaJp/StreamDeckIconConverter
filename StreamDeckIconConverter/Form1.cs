@@ -524,10 +524,13 @@ namespace StreamDeckIconConverter
             string sAddBorder1 = "";
             string sAddBorder2 = "";
 
-            if ((eArgType == ArgumentType.PREVIEW_MP4) || (eArgType == ArgumentType.PREVIEW_GIF))
+            if (checkBoxAddBorder.Checked)
             {
-                sAddBorder1 = "-i \"" + m_sAppDir + Path.DirectorySeparatorChar + BORDER_IMAGE_NAME + "\" ";
-                sAddBorder2 = "[bg]; [bg][1:v]overlay";
+                if ((eArgType == ArgumentType.PREVIEW_MP4) || (eArgType == ArgumentType.PREVIEW_GIF))
+                {
+                    sAddBorder1 = "-i \"" + m_sAppDir + Path.DirectorySeparatorChar + BORDER_IMAGE_NAME + "\" ";
+                    sAddBorder2 = "[bg]; [bg][1:v]overlay";
+                }
             }
 
             string sIconCrop = "";
