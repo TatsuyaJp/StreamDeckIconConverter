@@ -88,9 +88,12 @@ namespace StreamDeckIconConverter
             // 
             // textBoxInputFilePath
             // 
+            this.textBoxInputFilePath.AllowDrop = true;
             resources.ApplyResources(this.textBoxInputFilePath, "textBoxInputFilePath");
             this.textBoxInputFilePath.Name = "textBoxInputFilePath";
             this.textBoxInputFilePath.ReadOnly = true;
+            this.textBoxInputFilePath.DragDrop += new System.Windows.Forms.DragEventHandler(this.textBoxInputFilePath_DragDrop);
+            this.textBoxInputFilePath.DragEnter += new System.Windows.Forms.DragEventHandler(this.textBoxInputFilePath_DragEnter);
             // 
             // buttonInputFileBrowse
             // 
@@ -106,12 +109,12 @@ namespace StreamDeckIconConverter
             // 
             // comboBoxVideoFrame
             // 
-            resources.ApplyResources(this.comboBoxVideoFrame, "comboBoxVideoFrame");
             this.comboBoxVideoFrame.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBoxVideoFrame.FormattingEnabled = true;
             this.comboBoxVideoFrame.Items.AddRange(new object[] {
             resources.GetString("comboBoxVideoFrame.Items"),
             resources.GetString("comboBoxVideoFrame.Items1")});
+            resources.ApplyResources(this.comboBoxVideoFrame, "comboBoxVideoFrame");
             this.comboBoxVideoFrame.Name = "comboBoxVideoFrame";
             this.comboBoxVideoFrame.SelectedIndexChanged += new System.EventHandler(this.comboBoxVideoFrame_SelectedIndexChanged);
             // 

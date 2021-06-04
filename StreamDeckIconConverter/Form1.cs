@@ -70,6 +70,35 @@ namespace StreamDeckIconConverter
             }
         }
 
+        private void textBoxInputFilePath_DragEnter(object sender, DragEventArgs e)
+        {
+            if (e.Data.GetDataPresent(DataFormats.FileDrop))
+            {
+                e.Effect = DragDropEffects.Move;
+            }
+            else
+            {
+                e.Effect = DragDropEffects.None;
+            }
+        }
+
+        private void textBoxInputFilePath_DragDrop(object sender, DragEventArgs e)
+        {
+            string[] sFilePathArray = (string[])e.Data.GetData(DataFormats.FileDrop, false);
+
+            if (sFilePathArray.Length > 0)
+            {
+                if (File.Exists(sFilePathArray[0]))
+                {
+                    if (GetVideoInfo(sFilePathArray[0]))
+                    {
+                        textBoxInputFilePath.Text = sFilePathArray[0];
+                        RefreshFFmpegArguments();
+                    }
+                }
+            }
+        }
+
         private bool IsExistFFmpeg()
         {
             bool bExist = false;
@@ -113,7 +142,7 @@ namespace StreamDeckIconConverter
                 if (process.ExitCode == 1)
                 {
                     // 動画サイズの検出
-                    Regex regexInputinfo = new Regex(@"Stream #\d+:\d+.* Video: .*, (?<width>\d+)x(?<height>\d+) \[SAR (?<sarw>\d+):(?<sarh>\d+)", RegexOptions.Multiline);
+                    Regex regexInputinfo = new Regex(@"Stream #\d+:\d+.* Video: .*, (?<width>\d+)x(?<height>\d+)( \[SAR (?<sarw>\d+):(?<sarh>\d+))?", RegexOptions.Multiline);
                     Match matchInputInfo = regexInputinfo.Match(sError);
                     // 再生時間の検出
                     Regex regexDuration = new Regex(@"Duration: (?<hour>\d+):(?<min>\d+):(?<sec>\d+)\.(?<msec>\d+)");
@@ -124,8 +153,16 @@ namespace StreamDeckIconConverter
                         // 動画サイズの算出
                         int iWidth = Int32.Parse(matchInputInfo.Groups["width"].Value);
                         int iHeight = Int32.Parse(matchInputInfo.Groups["height"].Value);
-                        double dSar = (double)Int32.Parse(matchInputInfo.Groups["sarw"].Value) / Int32.Parse(matchInputInfo.Groups["sarh"].Value);
+
+                        double dSar = 1.0;
+
+                        if (matchInputInfo.Groups["sarw"].Success && matchInputInfo.Groups["sarh"].Success)
+                        {
+                            dSar = (double)Int32.Parse(matchInputInfo.Groups["sarw"].Value) / Int32.Parse(matchInputInfo.Groups["sarh"].Value);
+                        }
+
                         double dDar = ((double)iWidth / iHeight) * dSar;
+
                         iWidth = (int)Math.Floor(iHeight * dDar / 2.0) * 2;
                         iHeight = (int)Math.Floor(iHeight / 2.0) * 2;
 
