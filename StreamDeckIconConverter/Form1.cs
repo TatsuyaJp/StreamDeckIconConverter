@@ -255,17 +255,17 @@ namespace StreamDeckIconConverter
             {
                 iCropMax = 0;
             }
-            else if (m_iInputSizeWidth == sizeCrop.Width)
-            {
-                iCropMax = m_iInputSizeHeight - sizeCrop.Height;
-                labelCropPosDir1.Text = Properties.Resources.top;
-                labelCropPosDir2.Text = Properties.Resources.bottom;
-            }
-            else
+            else if (m_iInputSizeHeight == sizeCrop.Height)
             {
                 iCropMax = m_iInputSizeWidth - sizeCrop.Width;
                 labelCropPosDir1.Text = Properties.Resources.left;
                 labelCropPosDir2.Text = Properties.Resources.right;
+            }
+            else
+            {
+                iCropMax = m_iInputSizeHeight - sizeCrop.Height;
+                labelCropPosDir1.Text = Properties.Resources.top;
+                labelCropPosDir2.Text = Properties.Resources.bottom;
             }
 
             hScrollBarCropPos.Maximum = iCropMax;
