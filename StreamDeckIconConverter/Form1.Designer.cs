@@ -29,6 +29,7 @@ namespace StreamDeckIconConverter
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
             this.labelInputFile = new System.Windows.Forms.Label();
             this.textBoxInputFilePath = new System.Windows.Forms.TextBox();
@@ -76,9 +77,17 @@ namespace StreamDeckIconConverter
             this.labelOutputSizeTitle = new System.Windows.Forms.Label();
             this.linkLabelTwitter = new System.Windows.Forms.LinkLabel();
             this.linkLabelGitHub = new System.Windows.Forms.LinkLabel();
+            this.pictureBoxPreview = new System.Windows.Forms.PictureBox();
+            this.backgroundWorkerMakePreview = new System.ComponentModel.BackgroundWorker();
+            this.timerMakePreview = new System.Windows.Forms.Timer(this.components);
+            this.labelBorderWidth = new System.Windows.Forms.Label();
+            this.numericUpDownBorderWidth = new System.Windows.Forms.NumericUpDown();
+            this.labelBorderWidthPx = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownIconLayoutCol)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownIconLayoutRow)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownFrameRate)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPreview)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownBorderWidth)).BeginInit();
             this.SuspendLayout();
             // 
             // labelInputFile
@@ -371,6 +380,7 @@ namespace StreamDeckIconConverter
             this.checkBoxAddBorder.CheckState = System.Windows.Forms.CheckState.Checked;
             this.checkBoxAddBorder.Name = "checkBoxAddBorder";
             this.checkBoxAddBorder.UseVisualStyleBackColor = true;
+            this.checkBoxAddBorder.CheckedChanged += new System.EventHandler(this.checkBoxAddBorder_CheckedChanged);
             // 
             // labelInputSize
             // 
@@ -406,10 +416,50 @@ namespace StreamDeckIconConverter
             this.linkLabelGitHub.TabStop = true;
             this.linkLabelGitHub.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabelGitHub_LinkClicked);
             // 
+            // pictureBoxPreview
+            // 
+            resources.ApplyResources(this.pictureBoxPreview, "pictureBoxPreview");
+            this.pictureBoxPreview.Name = "pictureBoxPreview";
+            this.pictureBoxPreview.TabStop = false;
+            // 
+            // backgroundWorkerMakePreview
+            // 
+            this.backgroundWorkerMakePreview.DoWork += new System.ComponentModel.DoWorkEventHandler(this.backgroundWorkerMakePreview_DoWork);
+            this.backgroundWorkerMakePreview.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorkerMakePreview_RunWorkerCompleted);
+            // 
+            // timerMakePreview
+            // 
+            this.timerMakePreview.Tick += new System.EventHandler(this.timerMakePreview_Tick);
+            // 
+            // labelBorderWidth
+            // 
+            resources.ApplyResources(this.labelBorderWidth, "labelBorderWidth");
+            this.labelBorderWidth.Name = "labelBorderWidth";
+            // 
+            // numericUpDownBorderWidth
+            // 
+            resources.ApplyResources(this.numericUpDownBorderWidth, "numericUpDownBorderWidth");
+            this.numericUpDownBorderWidth.Name = "numericUpDownBorderWidth";
+            this.numericUpDownBorderWidth.Value = new decimal(new int[] {
+            36,
+            0,
+            0,
+            0});
+            this.numericUpDownBorderWidth.ValueChanged += new System.EventHandler(this.numericUpDownBorderWidth_ValueChanged);
+            // 
+            // labelBorderWidthPx
+            // 
+            resources.ApplyResources(this.labelBorderWidthPx, "labelBorderWidthPx");
+            this.labelBorderWidthPx.Name = "labelBorderWidthPx";
+            // 
             // MainForm
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.labelBorderWidthPx);
+            this.Controls.Add(this.numericUpDownBorderWidth);
+            this.Controls.Add(this.labelBorderWidth);
+            this.Controls.Add(this.pictureBoxPreview);
             this.Controls.Add(this.linkLabelGitHub);
             this.Controls.Add(this.linkLabelTwitter);
             this.Controls.Add(this.checkBoxAddBorder);
@@ -463,6 +513,8 @@ namespace StreamDeckIconConverter
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownIconLayoutCol)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownIconLayoutRow)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownFrameRate)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxPreview)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownBorderWidth)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -516,6 +568,12 @@ namespace StreamDeckIconConverter
         private System.Windows.Forms.Label labelOutputSizeTitle;
         private System.Windows.Forms.LinkLabel linkLabelTwitter;
         private System.Windows.Forms.LinkLabel linkLabelGitHub;
+        private System.Windows.Forms.PictureBox pictureBoxPreview;
+        private System.ComponentModel.BackgroundWorker backgroundWorkerMakePreview;
+        private System.Windows.Forms.Timer timerMakePreview;
+        private System.Windows.Forms.Label labelBorderWidth;
+        private System.Windows.Forms.NumericUpDown numericUpDownBorderWidth;
+        private System.Windows.Forms.Label labelBorderWidthPx;
     }
 }
 

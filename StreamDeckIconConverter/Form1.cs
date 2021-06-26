@@ -29,11 +29,15 @@ namespace StreamDeckIconConverter
         // アイコンの幅
         const int ICON_WIDTH = 72;
         // 枠線の幅
-        const int BORDER_WIDTH = 36;
+        int m_iBorderWidth = 36;
         // アプリケーションのディレクトリ
         string m_sAppDir = "";
         // 枠線画像ファイル名
         const string BORDER_IMAGE_NAME = "border.png";
+        // プレビュー作成待機時間
+        int m_iPreviewWait = 0;
+        // ボーダー画像作成済みフラグ
+        bool m_bBorderBitmapSaved = false;
 
         public MainForm()
         {
@@ -65,6 +69,7 @@ namespace StreamDeckIconConverter
                     {
                         textBoxInputFilePath.Text = openFileDialog.FileName;
                         RefreshFFmpegArguments();
+                        RequestPreview();
                     }
                 }
             }
@@ -94,6 +99,7 @@ namespace StreamDeckIconConverter
                     {
                         textBoxInputFilePath.Text = sFilePathArray[0];
                         RefreshFFmpegArguments();
+                        RequestPreview();
                     }
                 }
             }
@@ -166,16 +172,22 @@ namespace StreamDeckIconConverter
                         iWidth = (int)Math.Floor(iHeight * dDar / 2.0) * 2;
                         iHeight = (int)Math.Floor(iHeight / 2.0) * 2;
 
+                        int iDurationMs = Int32.Parse(matchDuration.Groups["msec"].Value) * 10;
+
                         // 再生時間の算出
-                        m_tsDuration = new TimeSpan(Int32.Parse(matchDuration.Groups["hour"].Value), Int32.Parse(matchDuration.Groups["min"].Value), Int32.Parse(matchDuration.Groups["sec"].Value));
+                        m_tsDuration = new TimeSpan(0, Int32.Parse(matchDuration.Groups["hour"].Value), Int32.Parse(matchDuration.Groups["min"].Value), Int32.Parse(matchDuration.Groups["sec"].Value), iDurationMs);
                         hScrollBarStartTime.Maximum = (int)Math.Floor(m_tsDuration.TotalSeconds);
                         hScrollBarEndTime.Maximum = (int)Math.Floor(m_tsDuration.TotalSeconds);
+                        hScrollBarStartTime.Value = 0;
+                        hScrollBarStartTimeMs.Value = 0;
+                        hScrollBarEndTime.Value = hScrollBarEndTime.Maximum;
+                        hScrollBarEndTimeMs.Value = iDurationMs;
                         RefreshStartTime();
                         RefreshEndTime();
 
                         // 動画情報を表示
                         labelInputSize.Text = iWidth + "x" + iHeight;
-                        labelInputDuration.Text = m_tsDuration.ToString("c");
+                        labelInputDuration.Text = m_tsDuration.ToString(@"hh\:mm\:ss\.fff");
 
                         // 動画サイズを格納
                         m_iInputSizeWidth = iWidth;
@@ -221,12 +233,16 @@ namespace StreamDeckIconConverter
         {
             PrintOutputSize();
             SetCropMax();
+            m_bBorderBitmapSaved = false;
+            RequestPreview();
         }
 
         private void numericUpDownIconLayoutRow_ValueChanged(object sender, EventArgs e)
         {
             PrintOutputSize();
             SetCropMax();
+            m_bBorderBitmapSaved = false;
+            RequestPreview();
         }
 
         private void PrintOutputSize()
@@ -239,8 +255,8 @@ namespace StreamDeckIconConverter
         {
             Size sizeOutput = new Size();
 
-            sizeOutput.Width = ((int)numericUpDownIconLayoutCol.Value * ICON_WIDTH) + (((int)numericUpDownIconLayoutCol.Value - 1) * BORDER_WIDTH);
-            sizeOutput.Height = ((int)numericUpDownIconLayoutRow.Value * ICON_WIDTH) + (((int)numericUpDownIconLayoutRow.Value - 1) * BORDER_WIDTH);
+            sizeOutput.Width = ((int)numericUpDownIconLayoutCol.Value * ICON_WIDTH) + (((int)numericUpDownIconLayoutCol.Value - 1) * m_iBorderWidth);
+            sizeOutput.Height = ((int)numericUpDownIconLayoutRow.Value * ICON_WIDTH) + (((int)numericUpDownIconLayoutRow.Value - 1) * m_iBorderWidth);
 
             return sizeOutput;
         }
@@ -304,11 +320,11 @@ namespace StreamDeckIconConverter
         {
             labelCropStartPosPixel.Text = hScrollBarCropPos.Value + "[px]";
             RefreshFFmpegArguments();
+            RequestPreview();
         }
 
         private void comboBoxVideoFrame_SelectedIndexChanged(object sender, EventArgs e)
         {
-
             bool bCropVisible = true;
 
             if (comboBoxVideoFrame.SelectedIndex != 0)
@@ -323,6 +339,7 @@ namespace StreamDeckIconConverter
             hScrollBarCropPos.Visible = bCropVisible;
 
             RefreshFFmpegArguments();
+            RequestPreview();
         }
 
         private void hScrollBarStartTime_Scroll(object sender, ScrollEventArgs e)
@@ -333,11 +350,26 @@ namespace StreamDeckIconConverter
         private void RefreshStartTime()
         {
             TimeSpan timeSpan = new TimeSpan(0, 0, hScrollBarStartTime.Value);
-            labelStartTimeSpan.Text = timeSpan.ToString("c");
-            RefreshStartEndDuration();
+            labelStartTimeSpan.Text = timeSpan.ToString(@"hh\:mm\:ss");
+
+            if(hScrollBarStartTime.Value == hScrollBarStartTime.Maximum)
+            {
+                hScrollBarStartTimeMs.Maximum = m_tsDuration.Milliseconds;
+            }
+            else
+            {
+                hScrollBarStartTimeMs.Maximum = 999;
+            }
+
+            RefreshStartTimeMs();
         }
 
         private void hScrollBarStartTimeMs_Scroll(object sender, ScrollEventArgs e)
+        {
+            RefreshStartTimeMs();
+        }
+
+        private void RefreshStartTimeMs()
         {
             labelStartTimeMs.Text = hScrollBarStartTimeMs.Value + "[ms]";
             RefreshStartEndDuration();
@@ -351,11 +383,26 @@ namespace StreamDeckIconConverter
         private void RefreshEndTime()
         {
             TimeSpan timeSpan = new TimeSpan(0, 0, hScrollBarEndTime.Value);
-            labelEndTimeSpan.Text = timeSpan.ToString("c");
-            RefreshStartEndDuration();
+            labelEndTimeSpan.Text = timeSpan.ToString(@"hh\:mm\:ss");
+
+            if (hScrollBarEndTime.Value == hScrollBarEndTime.Maximum)
+            {
+                hScrollBarEndTimeMs.Maximum = m_tsDuration.Milliseconds;
+            }
+            else
+            {
+                hScrollBarEndTimeMs.Maximum = 999;
+            }
+
+            RefreshEndTimeMs();
         }
 
         private void hScrollBarEndTimeMs_Scroll(object sender, ScrollEventArgs e)
+        {
+            RefreshEndTimeMs();
+        }
+
+        private void RefreshEndTimeMs()
         {
             labelEndTimeMs.Text = hScrollBarEndTimeMs.Value + "[ms]";
             RefreshStartEndDuration();
@@ -375,6 +422,7 @@ namespace StreamDeckIconConverter
             }
 
             RefreshFFmpegArguments();
+            RequestPreview();
         }
 
         private string GetStartEndDuration()
@@ -459,7 +507,8 @@ namespace StreamDeckIconConverter
         {
             PREVIEW_MP4,
             PREVIEW_GIF,
-            ICON_GIF
+            ICON_GIF,
+            PREVIEW_PIPE_START
         }
 
         private string GetFFmpegArguments(string sFilePath, ArgumentType eArgType, string sIconCropPos)
@@ -475,19 +524,72 @@ namespace StreamDeckIconConverter
                 TimeSpan timeSpanStart = new TimeSpan(0, 0, 0, hScrollBarStartTime.Value, hScrollBarStartTimeMs.Value);
                 TimeSpan timeSpanEnd = new TimeSpan(0, 0, 0, hScrollBarEndTime.Value, hScrollBarEndTimeMs.Value);
 
+                // ファイル開始端フラグ
+                bool bSof = false;
+
+                // ファイル終了端フラグ
+                bool bEof = false;
+
                 string sStartSec;
 
                 if (timeSpanStart < timeSpanEnd)
                 {
                     sStartSec = timeSpanStart.TotalSeconds.ToString("0.000");
+
+                    // 開始時間が最小値か確認
+                    if ((hScrollBarStartTime.Value == hScrollBarStartTime.Minimum) &&
+                        (hScrollBarStartTimeMs.Value == hScrollBarStartTimeMs.Minimum))
+                    {
+                        bSof = true;
+                    }
+
+                    // 終了時間が最大値か確認
+                    if ((hScrollBarEndTime.Value == hScrollBarEndTime.Maximum) &&
+                        (hScrollBarEndTimeMs.Value == hScrollBarEndTimeMs.Maximum))
+                    {
+                        bEof = true;
+                    }
                 }
                 else
                 {
                     sStartSec = timeSpanEnd.TotalSeconds.ToString("0.000");
+
+                    // 終了時間(=開始時間)が最大値か確認
+                    if ((hScrollBarEndTime.Value == hScrollBarStartTime.Minimum) &&
+                        (hScrollBarEndTimeMs.Value == hScrollBarStartTimeMs.Minimum))
+                    {
+                        bSof = true;
+                    }
+
+                    // 開始時間(=終了時間)が最大値か確認
+                    if ((hScrollBarStartTime.Value == hScrollBarStartTime.Maximum) &&
+                        (hScrollBarStartTimeMs.Value == hScrollBarStartTimeMs.Maximum))
+                    {
+                        bEof = true;
+                    }
                 }
 
-                sTrimTime = "-ss " + sStartSec + " " +
-                            "-t " + sDuration + " ";
+                // 開始時間が最小値でないことを確認
+                if (!bSof)
+                {
+                    sTrimTime = "-ss " + sStartSec + " ";
+                }
+
+                if (eArgType != ArgumentType.PREVIEW_PIPE_START)
+                {
+                    // 終了時間が最大値でないことを確認
+                    if (!bEof)
+                    {
+                        sTrimTime += "-t " + sDuration + " ";
+                    }
+                }
+            }
+
+            string sPipePreview = "";
+
+            if (eArgType == ArgumentType.PREVIEW_PIPE_START)
+            {
+                sPipePreview = "-vframes 1 -f image2pipe ";
             }
 
             string sPosition = "";
@@ -526,7 +628,7 @@ namespace StreamDeckIconConverter
 
             if (checkBoxAddBorder.Checked)
             {
-                if ((eArgType == ArgumentType.PREVIEW_MP4) || (eArgType == ArgumentType.PREVIEW_GIF))
+                if ((eArgType == ArgumentType.PREVIEW_MP4) || (eArgType == ArgumentType.PREVIEW_GIF) || (eArgType == ArgumentType.PREVIEW_PIPE_START))
                 {
                     sAddBorder1 = "-i \"" + m_sAppDir + Path.DirectorySeparatorChar + BORDER_IMAGE_NAME + "\" ";
                     sAddBorder2 = "[bg]; [bg][1:v]overlay";
@@ -547,10 +649,17 @@ namespace StreamDeckIconConverter
                 sPaletteGen = "[gif]; [gif]split[a][b]; [a]palettegen[c]; [b][c]paletteuse";
             }
 
+            string sFrameRate = "";
+
+            if (eArgType != ArgumentType.PREVIEW_PIPE_START)
+            {
+                sFrameRate = "-r " + numericUpDownFrameRate.Value + " ";
+            }
+
             sArguments = sTrimTime +
                          "-i \"" + sFilePath + "\" " +
                          sAddBorder1 +
-                         "-r " + numericUpDownFrameRate.Value + " " +
+                         sFrameRate +
                          "-filter_complex \"" +
                                "[0:v]scale=w=trunc(ih*dar/2)*2:h=trunc(ih/2)*2," +
                                "setsar=1/1," +
@@ -559,6 +668,7 @@ namespace StreamDeckIconConverter
                                sIconCrop +
                                sPaletteGen +
                              "\" " +
+                         sPipePreview +
                          "-an -y";
 
             return sArguments;
@@ -569,8 +679,20 @@ namespace StreamDeckIconConverter
             textBoxFFmpegArgument.Text = GetFFmpegArguments(textBoxInputFilePath.Text, ArgumentType.ICON_GIF, "0:0");
         }
 
+        private void RequestPreview()
+        {
+            m_iPreviewWait = 500;
+            timerMakePreview.Enabled = true;
+        }
+
         private bool MakeBorderBitmap()
         {
+            // ボーダー画像が保存済み かつ ボーダー画像が存在する か確認
+            if (m_bBorderBitmapSaved && File.Exists(m_sAppDir + Path.DirectorySeparatorChar + BORDER_IMAGE_NAME))
+            {
+                return true;
+            }
+
             Size sizeOutput = CalcOutputSize();
             using (Bitmap bitmapBorder = new Bitmap(sizeOutput.Width, sizeOutput.Height, PixelFormat.Format32bppArgb))
             {
@@ -584,7 +706,7 @@ namespace StreamDeckIconConverter
                 {
                     for (int iCol = 0; iCol < numericUpDownIconLayoutCol.Value; iCol++)
                     {
-                        Point pointDraw = new Point(iCol * (BORDER_WIDTH + ICON_WIDTH), iRow * (BORDER_WIDTH + ICON_WIDTH));
+                        Point pointDraw = new Point(iCol * (m_iBorderWidth + ICON_WIDTH), iRow * (m_iBorderWidth + ICON_WIDTH));
 
                         graphicsBorder.DrawImage(bitmapIconBorder, pointDraw);
                     }
@@ -596,6 +718,7 @@ namespace StreamDeckIconConverter
                 try
                 {
                     bitmapBorder.Save(m_sAppDir + Path.DirectorySeparatorChar + BORDER_IMAGE_NAME, ImageFormat.Png);
+                    m_bBorderBitmapSaved = true;
                 }
                 catch (Exception ex)
                 {
@@ -721,7 +844,7 @@ namespace StreamDeckIconConverter
                             }
                         }
 
-                        string sIconCropPos = (iCol * (ICON_WIDTH + BORDER_WIDTH)) + ":" + (iRow * (ICON_WIDTH + BORDER_WIDTH));
+                        string sIconCropPos = (iCol * (ICON_WIDTH + m_iBorderWidth)) + ":" + (iRow * (ICON_WIDTH + m_iBorderWidth));
                         processStartInfo.Arguments = GetFFmpegArguments(sFilePath, ArgumentType.ICON_GIF, sIconCropPos) + " \"" + sOutputPath + "\"";
 
                         Process process = Process.Start(processStartInfo);
@@ -747,6 +870,103 @@ namespace StreamDeckIconConverter
         private void linkLabelGitHub_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
             Process.Start("https://github.com/TatsuyaJp/StreamDeckIconConverter");
+        }
+
+        private void timerMakePreview_Tick(object sender, EventArgs e)
+        {
+            if (!backgroundWorkerMakePreview.IsBusy)
+            {
+                m_iPreviewWait -= timerMakePreview.Interval;
+
+                if (m_iPreviewWait <= 0)
+                {
+                    m_iPreviewWait = 0;
+                    timerMakePreview.Enabled = false;
+
+                    if (!IsExistFFmpeg())
+                    {
+                        return;
+                    }
+
+                    string sFilePath = textBoxInputFilePath.Text;
+
+                    if ((sFilePath == "") || !File.Exists(sFilePath))
+                    {
+                        return;
+                    }
+
+                    backgroundWorkerMakePreview.RunWorkerAsync(GetFFmpegArguments(sFilePath, ArgumentType.PREVIEW_PIPE_START, "") + " pipe:1");
+                }
+            }
+        }
+
+        private void backgroundWorkerMakePreview_DoWork(object sender, DoWorkEventArgs e)
+        {
+            if (checkBoxAddBorder.Checked)
+            {
+                if (!MakeBorderBitmap())
+                {
+                    return;
+                }
+            }
+
+            ProcessStartInfo processStartInfo = new ProcessStartInfo(m_sFFmpegExePath);
+            processStartInfo.CreateNoWindow = true;
+            processStartInfo.UseShellExecute = false;
+            processStartInfo.RedirectStandardOutput = true;
+            processStartInfo.RedirectStandardError = true;
+            processStartInfo.Arguments = (string)e.Argument;
+
+            Process process = Process.Start(processStartInfo);
+
+            Image imagePreview = null;
+            bool bDetectException = false;
+
+            try
+            {
+                imagePreview = Image.FromStream(process.StandardOutput.BaseStream);
+            }
+            catch(ArgumentException)
+            {
+                bDetectException = true;
+            }
+
+            process.WaitForExit();
+
+            if (!bDetectException && (process.ExitCode == 0))
+            {
+                e.Result = imagePreview;
+            }
+            else
+            {
+                e.Result = null;
+            }
+        }
+
+        private void backgroundWorkerMakePreview_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+            if (e.Result == null)
+            {
+                pictureBoxPreview.Image = null;
+            }
+            else
+            {
+                pictureBoxPreview.Image = (Image)e.Result;
+            }
+        }
+
+        private void checkBoxAddBorder_CheckedChanged(object sender, EventArgs e)
+        {
+            RequestPreview();
+        }
+
+        private void numericUpDownBorderWidth_ValueChanged(object sender, EventArgs e)
+        {
+            m_iBorderWidth = (int)numericUpDownBorderWidth.Value;
+            PrintOutputSize();
+            SetCropMax();
+            m_bBorderBitmapSaved = false;
+            RequestPreview();
         }
     }
 }
