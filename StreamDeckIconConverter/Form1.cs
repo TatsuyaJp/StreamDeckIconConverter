@@ -688,6 +688,11 @@ namespace StreamDeckIconConverter
                 processStartInfo.CreateNoWindow = false;
                 processStartInfo.UseShellExecute = false;
 
+                // 上書き許可フラグ
+                bool bAllowOverWrite = false;
+                // 上書きファイル名
+                string sOverWriteFileName = Path.GetFileNameWithoutExtension(saveFileDialog.FileName) + "_*" + Path.GetExtension(saveFileDialog.FileName);
+
                 for (int iRow = 0; iRow < numericUpDownIconLayoutRow.Value; iRow++)
                 {
                     for (int iCol = 0; iCol < numericUpDownIconLayoutCol.Value; iCol++)
@@ -703,9 +708,16 @@ namespace StreamDeckIconConverter
                                 MessageBox.Show(Properties.Resources.ioFilePathSame, Properties.Resources.error, MessageBoxButtons.OK, MessageBoxIcon.Error);
                                 return;
                             }
-                            else if (DialogResult.OK != MessageBox.Show(Properties.Resources.confirmOverwrite + "\n\n" + Path.GetFileName(sOutputPath), Properties.Resources.warning, MessageBoxButtons.OKCancel, MessageBoxIcon.Warning))
+                            else if (!bAllowOverWrite)
                             {
-                                return;
+                                if (DialogResult.OK == MessageBox.Show(Properties.Resources.confirmOverwrite + "\n\n" + sOverWriteFileName, Properties.Resources.warning, MessageBoxButtons.OKCancel, MessageBoxIcon.Warning))
+                                {
+                                    bAllowOverWrite = true;
+                                }
+                                else
+                                {
+                                    return;
+                                }
                             }
                         }
 
