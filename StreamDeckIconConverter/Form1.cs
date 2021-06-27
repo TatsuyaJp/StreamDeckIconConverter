@@ -177,7 +177,9 @@ namespace StreamDeckIconConverter
                         // 再生時間の算出
                         m_tsDuration = new TimeSpan(0, Int32.Parse(matchDuration.Groups["hour"].Value), Int32.Parse(matchDuration.Groups["min"].Value), Int32.Parse(matchDuration.Groups["sec"].Value), iDurationMs);
                         hScrollBarStartTime.Maximum = (int)Math.Floor(m_tsDuration.TotalSeconds);
+                        hScrollBarStartTimeMs.Maximum = 999;
                         hScrollBarEndTime.Maximum = (int)Math.Floor(m_tsDuration.TotalSeconds);
+                        hScrollBarEndTimeMs.Maximum = 999;
                         hScrollBarStartTime.Value = 0;
                         hScrollBarStartTimeMs.Value = 0;
                         hScrollBarEndTime.Value = hScrollBarEndTime.Maximum;
