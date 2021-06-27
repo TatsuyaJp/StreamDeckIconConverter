@@ -354,7 +354,7 @@ namespace StreamDeckIconConverter
             TimeSpan timeSpan = new TimeSpan(0, 0, hScrollBarStartTime.Value);
             labelStartTimeSpan.Text = timeSpan.ToString(@"hh\:mm\:ss");
 
-            if(hScrollBarStartTime.Value == hScrollBarStartTime.Maximum)
+            if (hScrollBarStartTime.Value == hScrollBarStartTime.Maximum)
             {
                 hScrollBarStartTimeMs.Maximum = m_tsDuration.Milliseconds;
             }
@@ -591,7 +591,7 @@ namespace StreamDeckIconConverter
 
             if (eArgType == ArgumentType.PREVIEW_PIPE_START)
             {
-                sPipePreview = "-vframes 1 -f image2pipe ";
+                sPipePreview = "-vframes 1 -f image2pipe -vcodec png ";
             }
 
             string sPosition = "";
@@ -916,24 +916,36 @@ namespace StreamDeckIconConverter
             processStartInfo.CreateNoWindow = true;
             processStartInfo.UseShellExecute = false;
             processStartInfo.RedirectStandardOutput = true;
-            processStartInfo.RedirectStandardError = true;
+            processStartInfo.RedirectStandardError = false;
             processStartInfo.Arguments = (string)e.Argument;
 
             Process process = Process.Start(processStartInfo);
+
+            MemoryStream msStdOut = new MemoryStream();
+
+            // 標準出力を取得するタスクを作成
+            Task taskGetStdOut = Task.Run(() =>
+            {
+                process.StandardOutput.BaseStream.CopyTo(msStdOut);
+            });
+
+            // 標準出力の取得完了を待つ
+            Task.WaitAll(taskGetStdOut);
+
+            // プロセスの終了を待つ
+            process.WaitForExit();
 
             Image imagePreview = null;
             bool bDetectException = false;
 
             try
             {
-                imagePreview = Image.FromStream(process.StandardOutput.BaseStream);
+                imagePreview = Image.FromStream(msStdOut);
             }
-            catch(ArgumentException)
+            catch (ArgumentException)
             {
                 bDetectException = true;
             }
-
-            process.WaitForExit();
 
             if (!bDetectException && (process.ExitCode == 0))
             {
