@@ -59,7 +59,7 @@ namespace StreamDeckIconConverter
 
         private void buttonInputFileBrowse_Click(object sender, EventArgs e)
         {
-            if (IsExistFFmpeg())
+            if (IsExistFFmpeg(true))
             {
                 OpenFileDialog openFileDialog = new OpenFileDialog();
 
@@ -105,7 +105,7 @@ namespace StreamDeckIconConverter
             }
         }
 
-        private bool IsExistFFmpeg()
+        private bool IsExistFFmpeg(bool bNotice)
         {
             bool bExist = false;
 
@@ -116,13 +116,17 @@ namespace StreamDeckIconConverter
             else if (File.Exists(m_sAppDir + Path.DirectorySeparatorChar + FFMPEG_EXE_NAME))
             {
                 m_sFFmpegExePath = m_sAppDir + Path.DirectorySeparatorChar + FFMPEG_EXE_NAME;
+                bExist = true;
             }
             else
             {
-                if (DialogResult.OK == MessageBox.Show(Properties.Resources.ffmpegNotFound + "\n" + Properties.Resources.ffmpegDownloadConfirm, Properties.Resources.warning, MessageBoxButtons.OKCancel, MessageBoxIcon.Warning))
+                if (bNotice)
                 {
-                    Process.Start("https://www.gyan.dev/ffmpeg/builds/");
-                    MessageBox.Show(Properties.Resources.ffmpegDownloadInformation, Properties.Resources.information, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    if (DialogResult.OK == MessageBox.Show(Properties.Resources.ffmpegNotFound + "\n" + Properties.Resources.ffmpegDownloadConfirm, Properties.Resources.warning, MessageBoxButtons.OKCancel, MessageBoxIcon.Warning))
+                    {
+                        Process.Start("https://www.gyan.dev/ffmpeg/builds/");
+                        MessageBox.Show(Properties.Resources.ffmpegDownloadInformation, Properties.Resources.information, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    }
                 }
             }
 
@@ -133,7 +137,7 @@ namespace StreamDeckIconConverter
         {
             bool bResult = false;
 
-            if (IsExistFFmpeg())
+            if (IsExistFFmpeg(true))
             {
                 ProcessStartInfo processStartInfo = new ProcessStartInfo(m_sFFmpegExePath);
                 processStartInfo.CreateNoWindow = true;
@@ -452,7 +456,7 @@ namespace StreamDeckIconConverter
 
         private void buttonPreviewMp4_Click(object sender, EventArgs e)
         {
-            if (!IsExistFFmpeg())
+            if (!IsExistFFmpeg(true))
             {
                 return;
             }
@@ -734,7 +738,7 @@ namespace StreamDeckIconConverter
 
         private void buttonPreviewGif_Click(object sender, EventArgs e)
         {
-            if (!IsExistFFmpeg())
+            if (!IsExistFFmpeg(true))
             {
                 return;
             }
@@ -789,7 +793,7 @@ namespace StreamDeckIconConverter
 
         private void buttonGenerateIcon_Click(object sender, EventArgs e)
         {
-            if (!IsExistFFmpeg())
+            if (!IsExistFFmpeg(true))
             {
                 return;
             }
@@ -885,7 +889,7 @@ namespace StreamDeckIconConverter
                     m_iPreviewWait = 0;
                     timerMakePreview.Enabled = false;
 
-                    if (!IsExistFFmpeg())
+                    if (!IsExistFFmpeg(false))
                     {
                         return;
                     }
