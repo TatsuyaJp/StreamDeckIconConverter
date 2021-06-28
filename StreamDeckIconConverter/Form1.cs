@@ -970,6 +970,19 @@ namespace StreamDeckIconConverter
             else
             {
                 pictureBoxPreview.Image = (Image)e.Result;
+
+                // 画像サイズが表示領域を超えるか確認
+                if ((pictureBoxPreview.Image.Width > pictureBoxPreview.Width) ||
+                    (pictureBoxPreview.Image.Height > pictureBoxPreview.Height))
+                {
+                    // 縮小して表示
+                    pictureBoxPreview.SizeMode = PictureBoxSizeMode.Zoom;
+                }
+                else
+                {
+                    // 等倍で表示
+                    pictureBoxPreview.SizeMode = PictureBoxSizeMode.CenterImage;
+                }
             }
         }
 
