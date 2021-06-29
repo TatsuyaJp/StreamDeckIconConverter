@@ -625,7 +625,7 @@ namespace StreamDeckIconConverter
                 // レターボックス
                 Size sizeOutput = CalcOutputSize();
 
-                sPosition = "scale=w=" + sizeOutput.Width + ":h=" + sizeOutput.Height + ":force_original_aspect_ratio=1," +
+                sPosition = "scale=w=" + sizeOutput.Width + ":h=" + sizeOutput.Height + ":force_original_aspect_ratio=decrease," +
                             "pad=w=" + sizeOutput.Width + ":h=" + sizeOutput.Height + ":x=(ow-iw)/2:y=(oh-ih)/2:color=#000000 ";
             }
 
@@ -637,7 +637,7 @@ namespace StreamDeckIconConverter
                 if ((eArgType == ArgumentType.PREVIEW_MP4) || (eArgType == ArgumentType.PREVIEW_GIF) || (eArgType == ArgumentType.PREVIEW_PIPE_START))
                 {
                     sAddBorder1 = "-i \"" + m_sAppDir + Path.DirectorySeparatorChar + BORDER_IMAGE_NAME + "\" ";
-                    sAddBorder2 = "[bg]; [bg][1:v]overlay";
+                    sAddBorder2 = "[bg]; [bg][1:v]overlay=format=auto";
                 }
             }
 
