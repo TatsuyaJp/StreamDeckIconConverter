@@ -68,7 +68,6 @@ namespace StreamDeckIconConverter
                     if (GetVideoInfo(openFileDialog.FileName))
                     {
                         textBoxInputFilePath.Text = openFileDialog.FileName;
-                        RefreshFFmpegArguments();
                         RequestPreview();
                     }
                 }
@@ -98,7 +97,6 @@ namespace StreamDeckIconConverter
                     if (GetVideoInfo(sFilePathArray[0]))
                     {
                         textBoxInputFilePath.Text = sFilePathArray[0];
-                        RefreshFFmpegArguments();
                         RequestPreview();
                     }
                 }
@@ -325,7 +323,6 @@ namespace StreamDeckIconConverter
         private void RefreshCropPosPixel()
         {
             labelCropStartPosPixel.Text = hScrollBarCropPos.Value + "[px]";
-            RefreshFFmpegArguments();
             RequestPreview();
         }
 
@@ -344,7 +341,6 @@ namespace StreamDeckIconConverter
             labelCropStartPosPixel.Visible = bCropVisible;
             hScrollBarCropPos.Visible = bCropVisible;
 
-            RefreshFFmpegArguments();
             RequestPreview();
         }
 
@@ -427,7 +423,6 @@ namespace StreamDeckIconConverter
                 labelGifDurationSec.Text = GetStartEndDuration() + "[s]";
             }
 
-            RefreshFFmpegArguments();
             RequestPreview();
         }
 
@@ -447,11 +442,6 @@ namespace StreamDeckIconConverter
             }
 
             return timeSpanDiff.TotalSeconds.ToString("0.000");
-        }
-
-        private void numericUpDownFrameRate_ValueChanged(object sender, EventArgs e)
-        {
-            RefreshFFmpegArguments();
         }
 
         private void buttonPreviewMp4_Click(object sender, EventArgs e)
@@ -493,7 +483,10 @@ namespace StreamDeckIconConverter
                 processStartInfo.CreateNoWindow = false;
                 processStartInfo.UseShellExecute = false;
 
-                processStartInfo.Arguments = GetFFmpegArguments(sFilePath, ArgumentType.PREVIEW_MP4, "") + " \"" + saveFileDialog.FileName + "\"";
+                string sArguments = GetFFmpegArguments(sFilePath, ArgumentType.PREVIEW_MP4, "") + " \"" + saveFileDialog.FileName + "\"";
+
+                processStartInfo.Arguments = sArguments;
+                textBoxFFmpegArgument.Text = sArguments;
 
                 Process process = Process.Start(processStartInfo);
                 process.WaitForExit();
@@ -680,11 +673,6 @@ namespace StreamDeckIconConverter
             return sArguments;
         }
 
-        private void RefreshFFmpegArguments()
-        {
-            textBoxFFmpegArgument.Text = GetFFmpegArguments(textBoxInputFilePath.Text, ArgumentType.ICON_GIF, "0:0");
-        }
-
         private void RequestPreview()
         {
             m_iPreviewWait = 500;
@@ -775,7 +763,10 @@ namespace StreamDeckIconConverter
                 processStartInfo.CreateNoWindow = false;
                 processStartInfo.UseShellExecute = false;
 
-                processStartInfo.Arguments = GetFFmpegArguments(sFilePath, ArgumentType.PREVIEW_GIF, "") + " \"" + saveFileDialog.FileName + "\"";
+                string sArguments = GetFFmpegArguments(sFilePath, ArgumentType.PREVIEW_GIF, "") + " \"" + saveFileDialog.FileName + "\"";
+
+                processStartInfo.Arguments = sArguments;
+                textBoxFFmpegArgument.Text = sArguments;
 
                 Process process = Process.Start(processStartInfo);
                 process.WaitForExit();
@@ -851,7 +842,10 @@ namespace StreamDeckIconConverter
                         }
 
                         string sIconCropPos = (iCol * (ICON_WIDTH + m_iBorderWidth)) + ":" + (iRow * (ICON_WIDTH + m_iBorderWidth));
-                        processStartInfo.Arguments = GetFFmpegArguments(sFilePath, ArgumentType.ICON_GIF, sIconCropPos) + " \"" + sOutputPath + "\"";
+                        string sArguments = GetFFmpegArguments(sFilePath, ArgumentType.ICON_GIF, sIconCropPos) + " \"" + sOutputPath + "\"";
+
+                        processStartInfo.Arguments = sArguments;
+                        textBoxFFmpegArgument.Text = sArguments;
 
                         Process process = Process.Start(processStartInfo);
                         process.WaitForExit();
@@ -901,7 +895,10 @@ namespace StreamDeckIconConverter
                         return;
                     }
 
-                    backgroundWorkerMakePreview.RunWorkerAsync(GetFFmpegArguments(sFilePath, ArgumentType.PREVIEW_PIPE_START, "") + " pipe:1");
+                    string sArguments = GetFFmpegArguments(sFilePath, ArgumentType.PREVIEW_PIPE_START, "") + " pipe:1";
+
+                    backgroundWorkerMakePreview.RunWorkerAsync(sArguments);
+                    textBoxFFmpegArgument.Text = sArguments;
                 }
             }
         }

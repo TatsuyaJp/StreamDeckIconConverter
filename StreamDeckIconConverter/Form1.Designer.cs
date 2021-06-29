@@ -329,7 +329,6 @@ namespace StreamDeckIconConverter
             0,
             0,
             0});
-            this.numericUpDownFrameRate.ValueChanged += new System.EventHandler(this.numericUpDownFrameRate_ValueChanged);
             // 
             // labelFrameRate
             // 
